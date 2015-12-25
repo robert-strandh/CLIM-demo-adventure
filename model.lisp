@@ -8,3 +8,8 @@
 (defclass place ()
   ((%directions :initarg :directions :reader directions)
    (%objects :initarg :objects :reader objects)))
+
+;;; This is the base class for all objects that can be members of the
+;;; set of objects in a place.
+(defclass object ()
+  ())
