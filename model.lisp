@@ -32,9 +32,9 @@
      (format stream ".~%")))
   (format stream "You can go the following directions: ")
   (loop for direction in (butlast (directions place))
-	do (show direction stream)
+	do (show (car direction) stream)
 	   (format stream ", or "))
-  (show (first (last (directions place))) stream)
+  (show (car (first (last (directions place)))) stream)
   (format stream ".~%"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
