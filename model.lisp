@@ -19,3 +19,6 @@
 ;;; A BUCKET is a type of object.
 (defclass bucket (object)
   ())
+
+(defmethod print-object ((object bucket) stream)
+  (format stream "a bucket"))
