@@ -39,6 +39,37 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
+;;; Classes for directions.
+
+(defclass direction ()
+  ())
+
+(defclass north (direction)
+  ())
+
+(defmethod show ((object north) stream)
+  (format stream "north"))
+
+(defclass south (direction)
+  ())
+
+(defmethod show ((object south) stream)
+  (format stream "south"))
+
+(defclass east (direction)
+  ())
+
+(defmethod show ((object east) stream)
+  (format stream "east"))
+
+(defclass west (direction)
+  ())
+
+(defmethod show ((object west) stream)
+  (format stream "west"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
 ;;; Classes for objects that can be contained in places or kept by
 ;;; players.
 
