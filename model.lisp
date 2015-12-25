@@ -43,3 +43,6 @@
 
 (defmethod print-object ((object notebook) stream)
   (format stream "a notebook"))
+
+(defclass player ()
+  ((%objects :initarg :objects :reader objects)))
