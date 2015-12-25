@@ -5,6 +5,8 @@
 (defclass world ()
   ((%places :initarg :places :reader places)))
 
+;;; This is the base class for all places that can be members of the
+;;; set of places of the world.
 (defclass place ()
   ((%directions :initarg :directions :reader directions)
    (%objects :initarg :objects :reader objects)))
