@@ -15,3 +15,7 @@
 ;;; set of objects in a place.
 (defclass object ()
   ())
+
+;;; A BUCKET is a type of object.
+(defclass bucket (object)
+  ())
