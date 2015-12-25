@@ -13,6 +13,30 @@
   ((%directions :initarg :directions :reader directions)
    (%objects :initarg :objects :reader objects)))
 
+(defmethod show ((place place) stream)
+  (format stream "You are in a place.~%")
+  (case (length (objects place))
+    (0
+     (format stream
+	     "It currently contains no objects.~%"))
+    (1
+     (format stream "It contains a single object: ")
+     (show (first (objects place)) stream)
+     (format stream ".~%"))
+    (t
+     (format stream "It contains ~d objects: " (length (objects place)))
+     (loop for object in (butlast (objects place))
+	   do (show object stream)
+	      (format stream ", and "))
+     (show (first (last (objects place))) stream)
+     (format stream ".~%")))
+  (format stream "You can go the following directions: ")
+  (loop for direction in (butlast (directions place))
+	do (show direction stream)
+	   (format stream ", or "))
+  (show (first (last (directions place))) stream)
+  (format stream ".~%"))
+
 ;;; This is the base class for all objects that can be members of the
 ;;; set of objects in a place.
 (defclass object ()
