@@ -1,5 +1,7 @@
 (cl:in-package #:clim-demo-adventure)
 
+(defgeneric show (thing stream))
+
 ;;; The class that holds an instance of the full model to drive the
 ;;; game.
 (defclass world ()
@@ -20,28 +22,28 @@
 (defclass bucket (object)
   ())
 
-(defmethod print-object ((object bucket) stream)
+(defmethod show ((object bucket) stream)
   (format stream "a bucket"))
 
 ;;; A PEN is another type of object.
 (defclass pen (object)
   ())
 
-(defmethod print-object ((object pen) stream)
+(defmethod show ((object pen) stream)
   (format stream "a pen"))
 
 ;;; An ERASOR is another type of object.
 (defclass erasor (object)
   ())
 
-(defmethod print-object ((object erasor) stream)
+(defmethod show ((object erasor) stream)
   (format stream "an erasor"))
 
 ;;; A NOTBOOK is another type of object.
 (defclass notebook (object)
   ())
 
-(defmethod print-object ((object notebook) stream)
+(defmethod show ((object notebook) stream)
   (format stream "a notebook"))
 
 (defclass player ()
