@@ -37,6 +37,11 @@
   (show (first (last (directions place))) stream)
   (format stream ".~%"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Classes for objects that can be contained in places or kept by
+;;; players.
+
 ;;; This is the base class for all objects that can be members of the
 ;;; set of objects in a place.
 (defclass object ()
@@ -81,6 +86,10 @@
 
 (defmethod show ((object notebook) stream)
   (format stream "a notebook"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Class PLAYER.
 
 (defclass player ()
   ((%objects :initarg :objects :reader objects)))
