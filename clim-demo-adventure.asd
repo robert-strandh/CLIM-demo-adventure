@@ -5,4 +5,5 @@
   :serial t
   :components
   ((:file "packages")
-   (:file "model")))
+   (:file "model")
+   (:file "example-model-instance")))
