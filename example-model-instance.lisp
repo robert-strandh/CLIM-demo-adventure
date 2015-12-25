@@ -16,3 +16,19 @@
 (defparameter *se* (make-instance 'place :objects (list)))
 
 (defparameter *w* (make-instance 'world :places (list *nw* *ne* *sw* *se*)))
+
+(reinitialize-instance
+ *nw*
+ :directions `((,*east* . ,*ne*) (,*south* . ,*sw*)))
+
+(reinitialize-instance
+ *ne*
+ :directions `((,*west* . ,*nw*) (,*south* . ,*se*)))
+
+(reinitialize-instance
+ *sw*
+ :directions `((,*east* . ,*se*) (,*north* . ,*nw*)))
+
+(reinitialize-instance
+ *se*
+ :directions `((,*west* . ,*sw*) (,*north* . ,*ne*)))
