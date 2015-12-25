@@ -3,3 +3,6 @@
 (defpackage #:clim-demo-adventure
   (:use :common-lisp)
   (:export #:adventure))
+
+(defpackage #:clim-demo-adventure-gui
+  (:use :clim-lisp :clim))
