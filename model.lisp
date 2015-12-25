@@ -4,3 +4,7 @@
 ;;; game.
 (defclass world ()
   ((%places :initarg :places :reader places)))
+
+(defclass place ()
+  ((%directions :initarg :directions :reader directions)
+   (%objects :initarg :objects :reader objects)))
