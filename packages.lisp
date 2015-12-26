@@ -8,7 +8,3 @@
 	   #:objects
 	   #:name
 	   #:make-world))
-
-(defpackage #:clim-demo-adventure-gui
-  (:use :clim-lisp :clim)
-  (:export #:adventure))
