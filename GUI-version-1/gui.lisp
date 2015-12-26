@@ -20,7 +20,7 @@
        (format stream "~a" (clim-demo-adventure:name (first objects)))
        (format stream ".~%"))
       (2
-       (format stream "two objects: ~a and ~a."
+       (format stream "two objects: ~a and ~a.~%"
 	       (clim-demo-adventure:name (first objects))
 	       (clim-demo-adventure:name (second objects))))
       (t
@@ -32,22 +32,8 @@
        (format stream ".~%"))))
 
 (defun show-place (place stream)
-  (format stream "You are in a place.~%")
-  (let ((objects (clim-demo-adventure:objects place)))
-    (case (length objects)
-      (0
-       (format stream "It currently contains no objects.~%"))
-      (1
-       (format stream "It contains a single object: ")
-       (format stream "~a" (clim-demo-adventure:name (first objects)))
-       (format stream ".~%"))
-      (t
-       (format stream "It contains ~d objects: " (length objects))
-       (loop for object in (rest objects)
-	     do (format stream "~a" (clim-demo-adventure:name object))
-		(format stream ", and "))
-       (format stream "~a" (clim-demo-adventure:name (first objects)))
-       (format stream ".~%"))))
+  (format stream "You are in a place.~%It contains ")
+  (show-objects (clim-demo-adventure:objects place) stream)
   (format stream "You can go the following directions: ")
   (let ((directions (clim-demo-adventure:directions place)))
     (loop for direction in (rest directions)
