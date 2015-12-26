@@ -25,3 +25,6 @@
 
 (define-adventure-command (com-quit :name t) ()
   (frame-exit *application-frame*))
+
+(define-presentation-type direction ()
+  :inherit-from 'string)
