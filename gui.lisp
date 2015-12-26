@@ -21,7 +21,7 @@
   (run-frame-top-level
    (make-application-frame
     'adventure
-    :visited-places (list clim-demo-adventure::*nw*))))
+    :visited-places (list (clim-demo-adventure:make-world)))))
 
 (define-adventure-command (com-quit :name t) ()
   (frame-exit *application-frame*))
