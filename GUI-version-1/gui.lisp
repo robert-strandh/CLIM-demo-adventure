@@ -16,8 +16,7 @@
   (let ((objects (clim-demo-adventure:objects place)))
     (case (length objects)
       (0
-       (format stream
-	       "It currently contains no objects.~%"))
+       (format stream "It currently contains no objects.~%"))
       (1
        (format stream "It contains a single object: ")
        (format stream "~a" (clim-demo-adventure:name (first objects)))
