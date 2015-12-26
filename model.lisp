@@ -47,29 +47,17 @@
   ()
   (:default-initargs :name "a bucket"))
 
-(defmethod show ((object bucket) stream)
-  (format stream "a bucket"))
-
 ;;; A PEN is another type of object.
 (defclass pen (object)
   ()
   (:default-initargs :name "a pen"))
-
-(defmethod show ((object pen) stream)
-  (format stream "a pen"))
 
 ;;; An ERASOR is another type of object.
 (defclass erasor (object)
   ()
   (:default-initargs :name "an erasor"))
 
-(defmethod show ((object erasor) stream)
-  (format stream "an erasor"))
-
 ;;; A NOTBOOK is another type of object.
 (defclass notebook (object)
   ()
   (:default-initargs :name "a notebook"))
-
-(defmethod show ((object notebook) stream)
-  (format stream "a notebook"))
