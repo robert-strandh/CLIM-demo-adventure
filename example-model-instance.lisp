@@ -1,10 +1,5 @@
 (cl:in-package #:clim-demo-adventure)
 
-(defparameter *north* (make-instance 'north))
-(defparameter *south* (make-instance 'south))
-(defparameter *east* (make-instance 'east))
-(defparameter *west* (make-instance 'west))
-
 (defparameter *bucket* (bucket))
 (defparameter *pen* (pen))
 (defparameter *erasor* (erasor))
@@ -19,16 +14,16 @@
 
 (reinitialize-instance
  *nw*
- :directions `((,*east* . ,*ne*) (,*south* . ,*sw*)))
+ :directions `((,"east" . ,*ne*) (,"south" . ,*sw*)))
 
 (reinitialize-instance
  *ne*
- :directions `((,*west* . ,*nw*) (,*south* . ,*se*)))
+ :directions `((,"west" . ,*nw*) (,"south" . ,*se*)))
 
 (reinitialize-instance
  *sw*
- :directions `((,*east* . ,*se*) (,*north* . ,*nw*)))
+ :directions `((,"east" . ,*se*) (,"north" . ,*nw*)))
 
 (reinitialize-instance
  *se*
- :directions `((,*west* . ,*sw*) (,*north* . ,*ne*)))
+ :directions `((,"west" . ,*sw*) (,"north" . ,*ne*)))
