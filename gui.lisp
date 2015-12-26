@@ -43,7 +43,7 @@
 	   (format pane "-----~%"))
   (finish-output pane))
 
-(defun clim-demo-adventure:adventure ()
+(defun adventure ()
   (run-frame-top-level
    (make-application-frame
     'adventure
