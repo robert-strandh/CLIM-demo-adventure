@@ -6,5 +6,4 @@
   :components
   ((:file "packages")
    (:file "model")
-   (:file "example-model-instance")
-   (:file "gui")))
+   (:file "example-model-instance")))
