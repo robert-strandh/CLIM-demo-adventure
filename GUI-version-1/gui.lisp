@@ -11,6 +11,26 @@
   (:layouts
    (:default (vertically () text inter))))
 
+(defun show-objects (objects stream)
+    (case (length objects)
+      (0
+       (format stream "no objects.~%"))
+      (1
+       (format stream "a single object: ")
+       (format stream "~a" (clim-demo-adventure:name (first objects)))
+       (format stream ".~%"))
+      (2
+       (format stream "two objects: ~a and ~a."
+	       (clim-demo-adventure:name (first objects))
+	       (clim-demo-adventure:name (second objects))))
+      (t
+       (format stream "~d objects: " (length objects))
+       (loop for object in (rest objects)
+	     do (format stream "~a" (clim-demo-adventure:name object))
+		(format stream ", and "))
+       (format stream "~a" (clim-demo-adventure:name (first objects)))
+       (format stream ".~%"))))
+
 (defun show-place (place stream)
   (format stream "You are in a place.~%")
   (let ((objects (clim-demo-adventure:objects place)))
