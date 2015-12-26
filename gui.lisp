@@ -31,3 +31,13 @@
 
 (defun new-place (name directions)
   (cdr (assoc name directions :test #'equal)))
+
+(define-adventure-command (com-go :name t)
+    ((direction 'direction))
+  (let* ((current-place (first (visited-places *application-frame*)))
+	 (possible-directions (clim-demo-adventure::directions current-place))
+	 (new-place (new-place direction possible-directions)))
+    (if (null new-place)
+	(progn (format *standard-input* "You can not go that way!~%")
+	       (finish-output))
+	(push new-place (visited-places *application-frame*)))))
