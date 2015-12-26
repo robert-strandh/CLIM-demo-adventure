@@ -11,9 +11,35 @@
   (:layouts
    (:default (vertically () text inter))))
 
+(defun show-place (place stream)
+  (format stream "You are in a place.~%")
+  (let ((objects (clim-demo-adventure:objects place)))
+    (case (length objects)
+      (0
+       (format stream
+	       "It currently contains no objects.~%"))
+      (1
+       (format stream "It contains a single object: ")
+       (format stream "~a" (clim-demo-adventure:name (first objects)))
+       (format stream ".~%"))
+      (t
+       (format stream "It contains ~d objects: " (length objects))
+       (loop for object in (butlast objects)
+	     do (format stream "~a" (clim-demo-adventure:name object))
+		(format stream ", and "))
+       (format stream "~a" (clim-demo-adventure:name (first (last objects))))
+       (format stream ".~%"))))
+  (format stream "You can go the following directions: ")
+  (let ((directions (clim-demo-adventure:directions place)))
+    (loop for direction in (butlast directions)
+	  do (format stream "~a" (car direction))
+	     (format stream ", or "))
+    (format stream "~a" (car (first (last directions))))
+    (format stream ".~%")))
+
 (defun display-application (frame pane)
   (loop for place in (reverse (visited-places frame))
-	do (clim-demo-adventure::show place pane)
+	do (show-place place pane)
 	   (format pane "-----~%"))
   (finish-output pane))
 
