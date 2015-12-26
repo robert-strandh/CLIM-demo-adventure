@@ -5,6 +5,7 @@
   (:export #:place
 	   #:directions
 	   #:objects
+	   #:make-world
 	   #:adventure))
 
 (defpackage #:clim-demo-adventure-gui
