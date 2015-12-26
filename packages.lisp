@@ -2,7 +2,10 @@
 
 (defpackage #:clim-demo-adventure
   (:use :common-lisp)
-  (:export #:adventure))
+  (:export #:place
+	   #:directions
+	   #:objects
+	   #:adventure))
 
 (defpackage #:clim-demo-adventure-gui
   (:use :clim-lisp :clim))
