@@ -3,6 +3,7 @@
 (defpackage #:clim-demo-adventure
   (:use :common-lisp)
   (:export #:place
+	   #:player
 	   #:directions
 	   #:objects
 	   #:name
