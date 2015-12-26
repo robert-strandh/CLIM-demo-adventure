@@ -16,3 +16,9 @@
 	do (clim-demo-adventure::show place pane)
 	   (format pane "-----~%"))
   (finish-output pane))
+
+(defun clim-demo-adventure:adventure ()
+  (run-frame-top-level
+   (make-application-frame
+    'adventure
+    :visited-places (list clim-demo-adventure::*nw*))))
