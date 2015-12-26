@@ -40,7 +40,7 @@
 ;;; This is the base class for all objects that can be members of the
 ;;; set of objects in a place.
 (defclass object ()
-  ())
+  ((%name :initform "an unnamed object" :initarg :name :reader name)))
 
 ;;; A BUCKET is a type of object.
 (defclass bucket (object)
