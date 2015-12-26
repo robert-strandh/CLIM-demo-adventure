@@ -10,3 +10,9 @@
    (inter :interactor :width 800 :height 100))
   (:layouts
    (:default (vertically () text inter))))
+
+(defun display-application (frame pane)
+  (loop for place in (reverse (visited-places frame))
+	do (clim-demo-adventure::show place pane)
+	   (format pane "-----~%"))
+  (finish-output pane))
