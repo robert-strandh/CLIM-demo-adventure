@@ -22,3 +22,6 @@
    (make-application-frame
     'adventure
     :visited-places (list clim-demo-adventure::*nw*))))
+
+(define-adventure-command (com-quit :name t) ()
+  (frame-exit *application-frame*))
