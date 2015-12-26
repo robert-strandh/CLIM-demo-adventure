@@ -24,10 +24,10 @@
        (format stream ".~%"))
       (t
        (format stream "It contains ~d objects: " (length objects))
-       (loop for object in (butlast objects)
+       (loop for object in (rest objects)
 	     do (format stream "~a" (clim-demo-adventure:name object))
 		(format stream ", and "))
-       (format stream "~a" (clim-demo-adventure:name (first (last objects))))
+       (format stream "~a" (clim-demo-adventure:name (first objects)))
        (format stream ".~%"))))
   (format stream "You can go the following directions: ")
   (let ((directions (clim-demo-adventure:directions place)))
