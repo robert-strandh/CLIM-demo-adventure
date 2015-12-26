@@ -1,4 +1,4 @@
-(cl:in-package #:clim-demo-adventure-gui)
+(cl:in-package #:clim-demo-adventure-gui-version-1)
 
 (define-application-frame adventure ()
   ((%visited-places :initarg :visited-places :accessor visited-places))
