@@ -17,7 +17,7 @@
 ;;; players.
 
 ;;; This is the base class for all objects that can be members of the
-;;; set of objects in a place.
+;;; set of objects in a place, or carried around by a player.
 (defclass object ()
   ((%name :initform "an unnamed object" :initarg :name :reader name)))
 
