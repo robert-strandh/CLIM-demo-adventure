@@ -6,6 +6,11 @@
   ((%directions :initarg :directions :reader directions)
    (%objects :initarg :objects :reader objects)))
 
+;;; This is that class to be used for a player.  It has a slot for
+;;; holding objects to carry around.
+(defclass player ()
+  ((%objects :initarg :objects :reader objects)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Classes for objects that can be contained in places or kept by
