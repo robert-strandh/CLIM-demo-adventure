@@ -31,10 +31,10 @@
        (format stream ".~%"))))
   (format stream "You can go the following directions: ")
   (let ((directions (clim-demo-adventure:directions place)))
-    (loop for direction in (butlast directions)
+    (loop for direction in (rest directions)
 	  do (format stream "~a" (car direction))
 	     (format stream ", or "))
-    (format stream "~a" (car (first (last directions))))
+    (format stream "~a" (car (first directions)))
     (format stream ".~%")))
 
 (defun display-application (frame pane)
