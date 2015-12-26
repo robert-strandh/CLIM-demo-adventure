@@ -16,14 +16,14 @@
 	     "It currently contains no objects.~%"))
     (1
      (format stream "It contains a single object: ")
-     (show (first (objects place)) stream)
+     (format stream "~a" (name (first (objects place))))
      (format stream ".~%"))
     (t
      (format stream "It contains ~d objects: " (length (objects place)))
      (loop for object in (butlast (objects place))
-	   do (show object stream)
+	   do (format stream "~a" (name object))
 	      (format stream ", and "))
-     (show (first (last (objects place))) stream)
+     (format stream "~a" (name (first (last (objects place)))))
      (format stream ".~%")))
   (format stream "You can go the following directions: ")
   (loop for direction in (butlast (directions place))
@@ -44,28 +44,32 @@
 
 ;;; A BUCKET is a type of object.
 (defclass bucket (object)
-  ())
+  ()
+  (:default-initargs :name "a bucket"))
 
 (defmethod show ((object bucket) stream)
   (format stream "a bucket"))
 
 ;;; A PEN is another type of object.
 (defclass pen (object)
-  ())
+  ()
+  (:default-initargs :name "a pen"))
 
 (defmethod show ((object pen) stream)
   (format stream "a pen"))
 
 ;;; An ERASOR is another type of object.
 (defclass erasor (object)
-  ())
+  ()
+  (:default-initargs :name "an erasor"))
 
 (defmethod show ((object erasor) stream)
   (format stream "an erasor"))
 
 ;;; A NOTBOOK is another type of object.
 (defclass notebook (object)
-  ())
+  ()
+  (:default-initargs :name "a notebook"))
 
 (defmethod show ((object notebook) stream)
   (format stream "a notebook"))
