@@ -10,8 +10,6 @@
 (defparameter *sw* (make-instance 'place :objects (list *notebook*)))
 (defparameter *se* (make-instance 'place :objects (list)))
 
-(defparameter *w* (make-instance 'world :places (list *nw* *ne* *sw* *se*)))
-
 (reinitialize-instance
  *nw*
  :directions `((,"east" . ,*ne*) (,"south" . ,*sw*)))
