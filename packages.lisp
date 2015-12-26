@@ -5,6 +5,7 @@
   (:export #:place
 	   #:directions
 	   #:objects
+	   #:name
 	   #:make-world
 	   #:adventure))
 
