@@ -81,10 +81,3 @@
 
 (defmethod show ((object notebook) stream)
   (format stream "a notebook"))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
-;;; Class PLAYER.
-
-(defclass player ()
-  ((%objects :initarg :objects :reader objects)))
