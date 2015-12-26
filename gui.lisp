@@ -28,3 +28,6 @@
 
 (define-presentation-type direction ()
   :inherit-from 'string)
+
+(defun new-place (name directions)
+  (cdr (assoc name directions :test #'equal)))
