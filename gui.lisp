@@ -35,7 +35,7 @@
 (define-adventure-command (com-go :name t)
     ((direction 'direction))
   (let* ((current-place (first (visited-places *application-frame*)))
-	 (possible-directions (clim-demo-adventure::directions current-place))
+	 (possible-directions (clim-demo-adventure:directions current-place))
 	 (new-place (new-place direction possible-directions)))
     (if (null new-place)
 	(progn (format *standard-input* "You can not go that way!~%")
